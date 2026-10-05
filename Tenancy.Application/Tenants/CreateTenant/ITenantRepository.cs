@@ -1,0 +1,9 @@
+using Tenancy.Domain;
+
+namespace Tenancy.Application.Tenants.CreateTenant;
+
+public interface ITenantRepository
+{
+    Task<bool> ExistsAsync(string subdomain);
+    Task<Tenant?> FindBySubdomainAsync(string subdomain);
+}

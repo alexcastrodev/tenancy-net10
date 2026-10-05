@@ -3,5 +3,7 @@
     <File Path="compose.yaml" />
   </Folder>
   <Project Path="Host\host.csproj" />
+  <Project Path="Tenancy.Application/Tenancy.Application.csproj" />
   <Project Path="Tenancy.Domain/Tenancy.Domain.csproj" />
+  <Project Path="Tenancy.Infrastructure/Tenancy.Infrastructure.csproj" />
 </Solution>
