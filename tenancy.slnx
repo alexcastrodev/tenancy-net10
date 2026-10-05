@@ -2,6 +2,6 @@
   <Folder Name="/Solution Items/">
     <File Path="compose.yaml" />
   </Folder>
+  <Project Path="Host\host.csproj" />
   <Project Path="Tenancy.Domain/Tenancy.Domain.csproj" />
-  <Project Path="tenancy/tenancy.csproj" />
 </Solution>
