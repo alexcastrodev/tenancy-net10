@@ -1,0 +1,7 @@
+﻿services:
+  tenancy:
+    image: tenancy
+    build:
+      context: .
+      dockerfile: tenancy/Dockerfile
+
