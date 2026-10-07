@@ -5,5 +5,6 @@ namespace Tenancy.Application.Tenants.CreateTenant;
 public interface ITenantRepository
 {
     Task<bool> ExistsAsync(string subdomain);
-    Task<Tenant?> FindBySubdomainAsync(string subdomain);
+    Task<Tenant?> FindBySubdomainAsync(string subdomain, CancellationToken cx);
+    Task AddAsync(Tenant tenant, CancellationToken cx);
 }

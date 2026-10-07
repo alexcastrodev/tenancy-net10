@@ -1,6 +1,11 @@
-﻿namespace Tenancy.Infrastructure;
+﻿using Microsoft.EntityFrameworkCore;
 
-public class Class1
+namespace Tenancy.Infrastructure.Persistence;
+
+internal sealed class TenancyDbContext(DbContextOptions options) : DbContext(options)
 {
-
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(TenancyDbContext).Assembly);
+    }
 }
