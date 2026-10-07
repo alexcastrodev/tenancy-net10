@@ -2,8 +2,11 @@
   <Folder Name="/Solution Items/">
     <File Path="compose.yaml" />
   </Folder>
-  <Project Path="Host\host.csproj" />
-  <Project Path="Tenancy.Application/Tenancy.Application.csproj" />
-  <Project Path="Tenancy.Domain/Tenancy.Domain.csproj" />
-  <Project Path="Tenancy.Infrastructure/Tenancy.Infrastructure.csproj" />
+  <Folder Name="/tests/">
+    <Project Path="tests/Tenancy.Domain.Tests/Tenancy.Domain.Tests.csproj" />
+  </Folder>
+  <Project Path="src/Tenancy.Api/Tenancy.Api.csproj" />
+  <Project Path="src/Tenancy.Application/Tenancy.Application.csproj" />
+  <Project Path="src/Tenancy.Domain/Tenancy.Domain.csproj" />
+  <Project Path="src/Tenancy.Infrastructure/Tenancy.Infrastructure.csproj" />
 </Solution>
