@@ -1,27 +1,24 @@
+using Microsoft.EntityFrameworkCore;
 using Tenancy.Application.Tenants.CreateTenant;
 using Tenancy.Domain;
 
 namespace Tenancy.Infrastructure.Persistence;
 
-internal sealed class TenantRepository(TenancyDbContext context) : ITenantRepository
+internal sealed class TenantRepository(TenancyDbContext db) : ITenantRepository
 {
-    public Task<bool> ExistsAsync(string subdomain)
+    public Task<bool> ExistsAsync(string subdomain, CancellationToken cx)
     {
-        throw new NotImplementedException();
+        return db.Tenants.AnyAsync(t => t.Subdomain == subdomain, cx);
     }
 
     public Task<Tenant?> FindBySubdomainAsync(string subdomain, CancellationToken cx)
     {
-        throw new NotImplementedException();
+        return db.Tenants.FirstOrDefaultAsync(t => t.Subdomain == subdomain, cx);
     }
 
-    public Task AddAsync(Tenant tenant, CancellationToken cx)
+    public async Task AddAsync(Tenant tenant, CancellationToken cx)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task<Tenant?> FindBySubdomainAsync(string subdomain)
-    {
-        throw new NotImplementedException();
+        db.Tenants.Add(tenant);
+        await db.SaveChangesAsync(cx);
     }
 }
